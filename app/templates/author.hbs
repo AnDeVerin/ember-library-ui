@@ -13,11 +13,11 @@
 
   <ul class="collection">
     {{#each this.model as |author|}}
-      <li>
-        <a href>
-          {{author.first}} {{author.last}}
-        </a>
-      </li>
+      <AuthorListItem
+        @first={{author.first}}
+        @last={{author.last}}
+        @tagName="li"
+      />
     {{/each}}
   </ul>
 </div>
