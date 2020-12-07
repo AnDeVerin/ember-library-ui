@@ -1,0 +1,24 @@
+<div class="slide-out-bg"></div>
+
+<div class="slide-out">
+  <div class="slide-out-card">
+    <LinkTo @route="author" class="btn-back">
+      <span class="sr-only">Back</span>
+    </LinkTo>
+
+    <div class="slide-out-heading">
+      <div class="title">
+        <h3>{{this.model.last}}, {{this.model.first}}</h3>
+
+        <div class="actions">
+          <button
+            class="btn-recessed"
+            type="button"
+            {{on "click" (fn this.deleteAuthor this.model)}}
+          >delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="slide-out-content"></div>
+  </div>
+</div>

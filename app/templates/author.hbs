@@ -16,8 +16,10 @@
       <AuthorListItem
         @first={{author.first}}
         @last={{author.last}}
-        @tagName="li"
+        @authorId={{author.id}}
       />
     {{/each}}
   </ul>
 </div>
+
+{{outlet}}
