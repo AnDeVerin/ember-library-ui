@@ -8,13 +8,15 @@
 
     <div class="slide-out-heading">
       <div class="title">
-        <h3>{{this.model.last}}, {{this.model.first}}</h3>
+        <h3>{{@model.last}}, {{@model.first}}</h3>
 
         <div class="actions">
+          <LinkTo @route="author.edit" @model={{@model}} class="btn-pop">edit</LinkTo>
+
           <button
             class="btn-recessed"
             type="button"
-            {{on "click" (fn this.deleteAuthor this.model)}}
+            {{on "click" (fn this.deleteAuthor @model)}}
           >delete</button>
         </div>
       </div>

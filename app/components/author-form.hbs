@@ -1,0 +1,15 @@
+<form {{on "submit" (prevent-default (fn @onSubmit this.first this.last))}}>
+  <div class="field">
+    <label>First name:</label>
+    <Input @type="text" @placeholder="First name" @value={{this.first}} />
+  </div>
+
+  <div class="field">
+    <label>Last name:</label>
+    <Input @type="text" @placeholder="Last name" @value={{this.last}} />
+  </div>
+
+  <div class="form-footer">
+    <button type="submit" class="btn-submit">save</button>
+  </div>
+</form>

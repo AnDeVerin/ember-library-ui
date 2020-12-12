@@ -1,0 +1,19 @@
+<div class="slide-out-bg"></div>
+
+<div class="slide-out">
+  <div class="slide-out-card">
+    <LinkTo @route="author.detail" @model={{@model}} class="btn-back">
+      <span class="sr-only">Back</span>
+    </LinkTo>
+
+    <div class="slide-out-heading">
+      <div class="title">
+        <h3>Editing: {{@model.last}}, {{@model.first}}</h3>
+      </div>
+    </div>
+
+    <div class="slide-out-content">
+      <AuthorForm @author={{@model}} @onSubmit={{this.saveAuthor}} />
+    </div>
+  </div>
+</div>
