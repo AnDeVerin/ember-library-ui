@@ -1,0 +1,52 @@
+<div class="slide-out-bg"></div>
+
+<div class="slide-out">
+  <div class="slide-out-card">
+    <LinkTo @route="book" class="btn-back">
+      <span class="sr-only">Back</span>
+    </LinkTo>
+
+    <div class="slide-out-heading">
+      <div class="title">
+        <h3>New Book</h3>
+      </div>
+    </div>
+
+    <div class="slide-out-content">
+      <form {{on "submit" (prevent-default this.saveBook)}}>
+        <div class="field">
+          <label>Title:</label>
+          <Input @type="text" @placeholder="Title" @value={{@model.title}} />
+        </div>
+
+        <div class="field">
+          <label>ISBN:</label>
+          <Input @type="text" @placeholder="ISBN" @value={{@model.isbn}} />
+        </div>
+
+        <div class="field">
+          <label>Date:</label>
+          <Input @type="date" @placeholder="Date" @value={{@model.publishDate}} />
+        </div>
+
+        <div class="field">
+          <label>Author:</label>
+          <p class="control">
+            <PowerSelect
+              @selected={{this.selectedAuthor}}
+              @searchEnabled={{true}}
+              @onChange={{this.selectAuthor}}
+              @search={{this.searchAuthor}} as |author|
+            >
+              {{author.last}}, {{author.first}}
+            </PowerSelect>
+          </p>
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn-submit">save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
