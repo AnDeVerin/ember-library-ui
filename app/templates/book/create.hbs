@@ -43,6 +43,11 @@
           </p>
         </div>
 
+        <div class="field">
+          <label>Don't see your author?</label>
+          <NewAuthorModal @onSave={{this.selectAuthor}} />
+        </div>
+
         <div class="form-footer">
           <button type="submit" class="btn-submit">save</button>
         </div>
