@@ -1,3 +1,22 @@
 import Route from '@ember/routing/route';
 
-export default class BookRoute extends Route {}
+export default class BookRoute extends Route {
+  queryParams = {
+    search: {
+      refreshModel: true,
+      replace: true,
+    },
+  };
+
+  model({ search }) {
+    if (search) {
+      return this.store.query('book', {
+        filter: {
+          query: search,
+        },
+      });
+    }
+
+    return this.store.findAll('book');
+  }
+}

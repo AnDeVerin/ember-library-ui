@@ -33,7 +33,7 @@
           <label>Author:</label>
           <p class="control">
             <PowerSelect
-              @selected={{this.selectedAuthor}}
+              @selected={{@model.author}}
               @searchEnabled={{true}}
               @onChange={{this.selectAuthor}}
               @search={{this.searchAuthor}} as |author|

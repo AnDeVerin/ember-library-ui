@@ -1,14 +1,10 @@
 import Controller from '@ember/controller';
-import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
+import { action, set } from '@ember/object';
 
 export default class BookCreateController extends Controller {
-  @tracked selectedAuthor = null;
-
   @action
   selectAuthor(author) {
-    this.selectedAuthor = author;
-    this.model.author = author;
+    set(this, 'model.author', author);
   }
 
   @action
