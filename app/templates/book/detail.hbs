@@ -11,7 +11,7 @@
         <h3>{{@model.title}}</h3>
 
         <div class="actions">
-          <a href="#" class="btn-pop">edit</a>
+          <LinkTo @route="book.edit" @model={{@model}} class="btn-pop">edit</LinkTo>
           <button class="btn-recessed" type="button" {{on "click" this.deleteBook}}>delete</button>
         </div>
       </div>
@@ -25,7 +25,7 @@
           </p>
           <p>
             <strong>Publish Date:</strong>
-            {{@model.publishDate}}
+            {{this.displayDate}}
           </p>
           <p>
             <strong>ISBN:</strong>

@@ -1,0 +1,39 @@
+<form {{on "submit" (prevent-default this.submitChanges)}}>
+  <div class="field">
+    <label>Title:</label>
+    <Input @type="text" @placeholder="Title" @value={{this.title}} />
+  </div>
+
+  <div class="field">
+    <label>ISBN:</label>
+    <Input @type="text" @placeholder="ISBN" @value={{this.isbn}} />
+  </div>
+
+  <div class="field">
+    <label>Date:</label>
+    <Input @type="date" @placeholder="Date" @value={{this.publishDate}} />
+  </div>
+
+  <div class="field">
+    <label>Author:</label>
+    <p class="control">
+      <PowerSelect
+        @selected={{this.author}}
+        @searchEnabled={{true}}
+        @onChange={{this.selectAuthor}}
+        @search={{this.searchAuthor}} as |author|
+      >
+        {{author.last}}, {{author.first}}
+      </PowerSelect>
+    </p>
+  </div>
+
+  <div class="field">
+    <label>Don't see your author?</label>
+    <NewAuthorModal @onSave={{this.selectAuthor}} />
+  </div>
+
+  <div class="form-footer">
+    <button type="submit" class="btn-submit">save</button>
+  </div>
+</form>
