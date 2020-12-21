@@ -21,6 +21,31 @@
         </div>
       </div>
     </div>
-    <div class="slide-out-content"></div>
+    <div class="slide-out-content">
+      <div class="title">
+        <h3>{{@model.books.length}} Books from this author</h3>
+      </div>
+
+      <div class="actions">
+        <LinkTo @route="author.detail.new-book" @model={{@model}} class="btn-secondary btn-add">
+        Add a book
+        </LinkTo>
+      </div>
+
+      <ul class="book-list">
+        {{#each @model.books as |book|}}
+          <li class="book">
+            <p class="book-title">
+              <LinkTo @route="book.detail" @model={{book}}>
+                {{book.title}}
+              </LinkTo>
+            </p>
+            <p class="book-isbn">{{book.isbn}}</p>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </div>
+
+{{outlet}}
