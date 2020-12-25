@@ -1,4 +1,4 @@
-import Model, { belongsTo, attr } from '@ember-data/model';
+import Model, { belongsTo, hasMany, attr } from '@ember-data/model';
 
 export default class BookModel extends Model {
   @attr() title;
@@ -6,4 +6,5 @@ export default class BookModel extends Model {
   @attr() publishDate;
 
   @belongsTo('author') author;
+  @hasMany('review') reviews;
 }
