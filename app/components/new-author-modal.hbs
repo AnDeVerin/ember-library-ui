@@ -1,6 +1,6 @@
 <button class="btn-trigger" type="button" {{on "click" (fn (mut this.isModalShown) true)}}>Add a New Author</button>
 
-{{#if this.isModalShown}}
+{{#liquid-if this.isModalShown class="modal-if"}}
   <div class="modal">
     <form class="modal-card" {{on "submit" (prevent-default this.saveAuthor)}}>
       <h3 class="modal-heading">Add New Author For Book</h3>
@@ -30,4 +30,4 @@
       </div>
     </form>
   </div>
-{{/if}}
+{{/liquid-if}}
