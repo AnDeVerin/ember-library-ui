@@ -15,7 +15,6 @@ export default class LoginController extends Controller {
       this.transitionToRoute('index');
     } catch (e) {
       this.errors = e.json.errors;
-      console.log(this.errors);
     }
   }
 }
