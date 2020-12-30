@@ -20,7 +20,15 @@
           >delete</button>
         </div>
       </div>
+
+      <div class="details">
+        <p>
+          <strong>Added By:</strong>
+          {{@model.username}}
+        </p>
+      </div>
     </div>
+
     <div class="slide-out-content">
       <div class="title">
         <h3>{{@model.books.length}} Books from this author</h3>
@@ -28,7 +36,7 @@
 
       <div class="actions">
         <LinkTo @route="author.detail.new-book" @model={{@model}} class="btn-secondary btn-add">
-        Add a book
+        add a book
         </LinkTo>
       </div>
 

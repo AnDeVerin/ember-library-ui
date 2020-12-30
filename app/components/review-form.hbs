@@ -1,16 +1,11 @@
 <form {{on "submit" (prevent-default this.submitChanges)}}>
   <div class="field">
-    <label>Your Full Name</label>
-    <Input @type="text" @placeholder="Name" @value={{this.user}}/>
-  </div>
-
-  <div class="field">
     <label>Write Your Review</label>
     <Textarea @placeholder="Review Text" @value={{this.body}}/>
   </div>
 
   <div class="form-footer">
-    <LinkTo @route="book.detail" @model={{@book}} class="btn-clear">Reset</LinkTo>
+    <LinkTo @route="book.detail" @model={{@book}} class="btn-clear">cancel</LinkTo>
     <button type="submit" class="btn-submit">submit</button>
   </div>
 </form>

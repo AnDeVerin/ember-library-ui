@@ -1,7 +1,7 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class ReviewModel extends Model {
-  @attr() user;
+  @attr() username;
   @attr() body;
   @attr() createdAt;
 
