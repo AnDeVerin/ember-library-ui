@@ -11,13 +11,17 @@
         <h3>{{@model.last}}, {{@model.first}}</h3>
 
         <div class="actions">
-          <LinkTo @route="author.edit" @model={{@model}} class="btn-pop">edit</LinkTo>
+          {{#if (can "edit author" @model)}}
+            <LinkTo @route="author.edit" @model={{@model}} class="btn-pop">edit</LinkTo>
+          {{/if}}
 
-          <button
-            class="btn-recessed"
-            type="button"
-            {{on "click" (fn this.deleteAuthor @model)}}
-          >delete</button>
+          {{#if (can "delete author" @model)}}
+            <button
+              class="btn-recessed"
+              type="button"
+              {{on "click" (fn this.deleteAuthor @model)}}
+            >delete</button>
+          {{/if}}
         </div>
       </div>
 
@@ -35,9 +39,11 @@
       </div>
 
       <div class="actions">
-        <LinkTo @route="author.detail.new-book" @model={{@model}} class="btn-secondary btn-add">
-        add a book
-        </LinkTo>
+        {{#if (can "create book")}}
+          <LinkTo @route="author.detail.new-book" @model={{@model}} class="btn-secondary btn-add">
+          add a book
+          </LinkTo>
+        {{/if}}
       </div>
 
       <ul class="book-list">

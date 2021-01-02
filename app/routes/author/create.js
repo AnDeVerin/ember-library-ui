@@ -5,7 +5,7 @@ export default class AuthorCreateRoute extends Route {
   @service session;
 
   beforeModel(transition) {
-    this.session.requireAuthentication(transition, 'login');
+    return this.session.requireAuthentication(transition, 'login');
   }
 
   model() {

@@ -3,9 +3,11 @@
     <Input @type="text" @placeholder="Search by Title or ISBN" @value={{this.search}} />
   </div>
 
-  <LinkTo @route="book.create" class="btn-new">
-    <div class="sr-only">Add New Book</div>
-  </LinkTo>
+  {{#if (can "create book")}}
+    <LinkTo @route="book.create" class="btn-new">
+      <div class="sr-only">Add New Book</div>
+    </LinkTo>
+  {{/if}}
 </div>
 
 <div class="panel-content">
