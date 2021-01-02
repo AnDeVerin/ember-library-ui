@@ -12,7 +12,6 @@ export default class LoginController extends Controller {
   async login({ email, password }) {
     try {
       await this.session.authenticate('authenticator:jwt', { email, password });
-      this.transitionToRoute('index');
     } catch (e) {
       this.errors = e.json.errors;
     }
