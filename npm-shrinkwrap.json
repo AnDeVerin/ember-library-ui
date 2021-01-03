@@ -12703,7 +12703,6 @@
           "version": "2.0.0",
           "resolved": "https://registry.npmjs.org/resolve-package-path/-/resolve-package-path-2.0.0.tgz",
           "integrity": "sha512-/CLuzodHO2wyyHTzls5Qr+EFeG6RcW4u6//gjYvUfcfyuplIX1SSccU+A5A9A78Gmezkl3NBkFAMxLbzTY9TJA==",
-          "dev": true,
           "requires": {
             "path-root": "^0.1.1",
             "resolve": "^1.13.1"
