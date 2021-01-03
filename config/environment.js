@@ -59,11 +59,13 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.DS.host = 'https://cryptic-island-93715.herokuapp.com';
-    ENV.fastboot.hostWhitelist = [
-      ENV.DS.host,
-      'adw-ember-library.herokuapp.com',
-    ];
+    const clientHost =
+      process.env.CLIENT_HOST || 'adw-ember-library.herokuapp.com';
+
+    ENV.DS.host =
+      process.env.API_HOST || 'https://cryptic-island-93715.herokuapp.com';
+
+    ENV.fastboot.hostWhitelist = [ENV.DS.host, clientHost];
   }
 
   ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.DS.host}/session`;
