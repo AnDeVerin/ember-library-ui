@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
 export default class ReviewFormComponent extends Component {
-  body = this.args.review.body ?? '';
+  body = this.args.review.body || '';
 
   @action
   submitChanges() {

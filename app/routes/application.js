@@ -5,7 +5,9 @@ export default class ApplicationRoute extends Route {
   @service session;
   @service currentUser;
 
-  beforeModel() {
+  beforeModel(...args) {
+    super.beforeModel(...args);
+
     this.loadUser();
   }
 

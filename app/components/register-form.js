@@ -2,10 +2,10 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
 export default class RegisterFormComponent extends Component {
-  email = this.args.user.email ?? '';
-  username = this.args.user.username ?? '';
-  password = this.args.user.password ?? '';
-  passwordConfirmation = this.args.user.passwordConfirmation ?? '';
+  email = this.args.user.email || '';
+  username = this.args.user.username || '';
+  password = this.args.user.password || '';
+  passwordConfirmation = this.args.user.passwordConfirmation || '';
 
   @action
   saveUser() {

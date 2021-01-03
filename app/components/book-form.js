@@ -5,10 +5,10 @@ import { inject as service } from '@ember/service';
 export default class BookFormComponent extends Component {
   @service store;
 
-  title = this.args.book?.title || '';
-  isbn = this.args.book?.isbn || '';
-  publishDate = this.args.book?.publishDate?.slice(0, 10) || null;
-  author = this.args.book?.author || null;
+  title = this.args.book.title || '';
+  isbn = this.args.book.isbn || '';
+  publishDate = this.args.book.publishDate || null;
+  author = this.args.book.author || null;
 
   @action
   selectAuthor(author) {
